@@ -1,0 +1,5 @@
+{beer, diaper, baby powder, bread, umbrella}
+{diaper, baby powder}
+{beer, diaper, milk}
+{diaper, beer, detergent}
+{beer, milk, coca-cola}

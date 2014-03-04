@@ -1,0 +1,35 @@
+package priori;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class TransactionSet {
+	public TransactionSet(String transactionFile) {
+			ArrayList<String> transactionArray = new ArrayList<String>();
+			ArrayList<ArrayList<String>> itemsArray = new ArrayList<ArrayList<String>>();
+			String pattern = "{.+}";
+			Pattern split = Pattern.compile("{?\\s*([^,]+)\\s*");
+			try {
+				Scanner transactions = new Scanner(new File(transactionFile)); //
+				while(transactions.hasNext(pattern)) {
+					transactionArray.add(transactions.next(pattern));
+				}
+				
+				int i=0;
+				for(String x : transactionArray) {
+					split.matcher(x).group(0);
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+	}
+	
+	public static void main(String [] args) {
+		new TransactionSet("./Transactions.txt");
+	}
+}

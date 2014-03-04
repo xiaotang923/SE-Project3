@@ -1,0 +1,11 @@
+package priori;
+
+import java.util.ArrayList;
+
+public class Rule {
+	
+	private ArrayList<Item> antecedent;
+	private ArrayList<Item> consequent;
+	
+	public classes
+}
