@@ -1,0 +1,26 @@
+package priori;
+
+import java.util.ArrayList;
+
+public class Generator {
+	private ArrayList<String[]> transactionData;
+	private ArrayList<ArrayList<String>> combinations;
+	private int level;
+	
+	public Generator(String transactionFile, String itemsFile) {
+		TransactionSet transactions = new TransactionSet(transactionFile, itemsFile);
+		this.transactionData = transactions.getItemsArray();
+		combinations = new ArrayList<ArrayList<String>>();
+		this.level = 1;
+	}
+	
+	public RuleSet generate() {
+		// all the apriori algorithm code goes here
+		return null;
+	}
+	
+	public void main(String[][] argv) {
+		Generator generator = new Generator("./Transactions.txt", "./Items.txt");
+		RuleSet rules = generator.generate();
+	}
+}

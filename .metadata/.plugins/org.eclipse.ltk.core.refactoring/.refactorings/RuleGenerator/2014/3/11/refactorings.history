@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;priori.Items&apos; to &apos;ItemSet&apos;&#x0D;&#x0A;- Original project: &apos;RuleGenerator&apos;&#x0D;&#x0A;- Original element: &apos;priori.Items&apos;&#x0D;&#x0A;- Renamed element: &apos;priori.ItemSet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Items&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;priori{Items.java[Items" matchStrategy="1" name="ItemSet" qualified="false" references="true" similarDeclarations="false" stamp="1394338912094" textual="false" version="1.0"/>
+</session>

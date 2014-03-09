@@ -10,27 +10,31 @@ public class TransactionSet {
 	
 	private ArrayList<String[]> itemsArray;
 	
-	public TransactionSet(String transactionFile, String itemsFile) {
-			ArrayList<String> transactionArray = new ArrayList<String>();
+	public TransactionSet(String transactionFile) {
 			itemsArray = new ArrayList<String[]>();
-			Pattern splitPattern = Pattern.compile("\\s*([!,{}]+)\\s*");
+			Pattern splitPattern = Pattern.compile("([!,\\{]+)\\s*");
 			try {
 				Scanner transactions = new Scanner(new File(transactionFile));
-				while(transactions.hasNextLine()) {
-					transactionArray.add(transactions.nextLine());
+				
+				//Skip the meta info
+				transactions.useDelimiter("\\{");
+				if(transactions.hasNext()) {
+					transactions.next();
+				}
+				
+				// read in each transactions and store as a string array
+				transactions.useDelimiter("\\}");
+				while(transactions.hasNext()) {
+					itemsArray.add(splitPattern.split(transactions.next()));
 				}
 				transactions.close();
-				
-				for(String x : transactionArray) {
-					itemsArray.add(splitPattern.split(x));
-				}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			}
 	}
 	
-	public static void main(String [] args) {
-		new TransactionSet("./Transactions.txt", "./Items.txt");
+	public static void main(String[] args) {
+		new TransactionSet("./Transactions.txt");
 	}
 	
 	public ArrayList<String[]> getItemsArray() {

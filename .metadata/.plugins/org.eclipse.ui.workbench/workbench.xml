@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="15" version="2.0">
 <workbenchAdvisor/>
-<window height="768" maximized="true" width="1024" x="180" y="180">
+<window height="768" maximized="true" width="1024" x="905" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
-<itemSize x="160"/>
+<itemSize x="371"/>
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
@@ -17,23 +17,49 @@
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="261" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="206" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1393812206239" focus="true" label="Workspace - Java">
+<page aggregateWorkingSetId="Aggregate for window 1393812206239" focus="true" label="Workspace - Debug">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="4"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
 </folder>
 </info>
 </editorArea>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Generator.java" partName="Generator.java" path="E:/CS355/SE-Project3/RuleGenerator/src/priori/Generator.java" title="Generator.java" tooltip="RuleGenerator/src/priori/Generator.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuleGenerator/src/priori/Generator.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2933" selectionTopPixel="720"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ItemSet.java" partName="ItemSet.java" path="E:/CS355/SE-Project3/RuleGenerator/src/priori/ItemSet.java" title="ItemSet.java" tooltip="RuleGenerator/src/priori/ItemSet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuleGenerator/src/priori/ItemSet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="425" selectionTopPixel="60"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Rule.java" partName="Rule.java" path="E:/CS355/SE-Project3/RuleGenerator/src/priori/Rule.java" title="Rule.java" tooltip="RuleGenerator/src/priori/Rule.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuleGenerator/src/priori/Rule.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="7" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RuleSet.java" partName="RuleSet.java" path="E:/CS355/SE-Project3/RuleGenerator/src/priori/RuleSet.java" title="RuleSet.java" tooltip="RuleGenerator/src/priori/RuleSet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuleGenerator/src/priori/RuleSet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="174" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TransactionSet.java" partName="TransactionSet.java" path="E:/CS355/SE-Project3/RuleGenerator/src/priori/TransactionSet.java" title="TransactionSet.java" tooltip="RuleGenerator/src/priori/TransactionSet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/RuleGenerator/src/priori/TransactionSet.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="974" selectionTopPixel="249"/>
+</editor>
 </editors>
 <views>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
@@ -42,8 +68,7 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
+<category IMemento.internal.id="Warnings (6 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -101,7 +126,7 @@
 </view>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.debug.ui.DebugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.jdt.internal.ui.JavaPerspectiveFactory" id="org.eclipse.jdt.ui.JavaPerspective" label="Java"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -276,7 +301,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.debug.internal.ui.ConsoleFolderView" ratio="0.7491785" ratioLeft="684" ratioRight="229" relationship="4" relative="org.eclipse.debug.internal.ui.NavigatorFolderView">
-<folder activePageID="org.eclipse.debug.ui.DebugView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.debug.ui.DebugView" label="Debug"/>
@@ -321,7 +346,165 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuleGenerator/src/priori/TransactionSet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuleGenerator/src/priori/ItemSet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuleGenerator/src/priori/Generator.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuleGenerator/src/priori/Rule.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/RuleGenerator/src/priori/RuleSet.java"/>
+</editors>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="1748" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="1936" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2204" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="1086" y="0"/>
+</item>
+<item historyLabel="TransactionSet.java" index="0">
+<position info="not_deleted" x="974" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="3035" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="252" y="12"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="3031" y="2"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="1369" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2241" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2292" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="3037" y="42"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="3022" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2957" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2996" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="3022" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2959" y="42"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2619" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2894" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2933" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2708" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="1086" y="0"/>
+</item>
+<item historyLabel="TransactionSet.java" index="0">
+<position info="not_deleted" x="974" y="0"/>
+</item>
+<item historyLabel="Rule.java" index="3">
+<position info="not_deleted" x="7" y="0"/>
+</item>
+<item historyLabel="RuleSet.java" index="4">
+<position info="not_deleted" x="174" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2139" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="1086" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="434" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="668" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="434" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="801" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2933" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="985" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="875" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="907" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2933" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="978" y="0"/>
+</item>
+<item historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2933" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="706" y="22"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="425" y="0"/>
+</item>
+<item historyLabel="ItemSet.java" index="1">
+<position info="not_deleted" x="425" y="0"/>
+</item>
+<item active="true" historyLabel="Generator.java" index="2">
+<position info="not_deleted" x="2933" y="0"/>
+</item>
+</navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
@@ -338,23 +521,29 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Items.java" tooltip="RuleGenerator/src/priori/Items.java">
-<persistable path="/RuleGenerator/src/priori/Items.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Transaction.java" tooltip="RuleGenerator/src/priori/Transaction.java">
-<persistable path="/RuleGenerator/src/priori/Transaction.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Rule.java" tooltip="RuleGenerator/src/priori/Rule.java">
-<persistable path="/RuleGenerator/src/priori/Rule.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Item.java" tooltip="RuleGenerator/src/priori/Item.java">
-<persistable path="/RuleGenerator/src/priori/Item.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Timer.java" tooltip="RuleGenerator/src/priori/Timer.java">
+<persistable path="/RuleGenerator/src/priori/Timer.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TransactionSet.java" tooltip="RuleGenerator/src/priori/TransactionSet.java">
 <persistable path="/RuleGenerator/src/priori/TransactionSet.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="RuleSet.java" tooltip="RuleGenerator/src/priori/RuleSet.java">
 <persistable path="/RuleGenerator/src/priori/RuleSet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Rule.java" tooltip="RuleGenerator/src/priori/Rule.java">
+<persistable path="/RuleGenerator/src/priori/Rule.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Items.java" tooltip="RuleGenerator/src/priori/Items.java">
+<persistable path="/RuleGenerator/src/priori/Items.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Generator.java" tooltip="RuleGenerator/src/priori/Generator.java">
+<persistable path="/RuleGenerator/src/priori/Generator.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Transaction.java" tooltip="RuleGenerator/src/priori/Transaction.java">
+<persistable path="/RuleGenerator/src/priori/Transaction.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Item.java" tooltip="RuleGenerator/src/priori/Item.java">
+<persistable path="/RuleGenerator/src/priori/Item.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ItemSet.java" tooltip="RuleGenerator/src/priori/ItemSet.java">
 <persistable path="/RuleGenerator/src/priori/ItemSet.java"/>
