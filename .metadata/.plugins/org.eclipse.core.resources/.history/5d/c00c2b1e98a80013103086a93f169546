@@ -1,0 +1,30 @@
+package priori;
+
+import java.util.ArrayList;
+
+public class Rule {
+	
+	private ArrayList<String> antecedent;
+	private ArrayList<String> consequent;
+	private double confidencLev;
+	private double supportLev;
+	
+	public Rule(ArrayList<String> antecedent, ArrayList<String> consequent, double confidencLev, double supportLev) {
+		this.antecedent = antecedent;
+		this.consequent = consequent;
+		this.confidencLev = confidencLev;
+		this.supportLev = supportLev;
+	}
+	
+	public String printRule(int index) {
+		return antecedent.get(index) + "  ==>  " + consequent.get(index) + " | Confidence Level: " + confidencLev;
+	}
+	
+	public String toString() {
+		String result = "";
+		for(int i=0; i<antecedent.size(); i++) {
+			result += printRule(i);
+		}
+		return result;
+	}
+}

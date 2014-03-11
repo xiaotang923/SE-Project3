@@ -33,11 +33,15 @@ public class ItemSet {
 	}
 	
 	public int getKey(String skey) {
-		return itemMap.get(skey);
+		return itemMap.get(skey.toUpperCase());
 	}
 	
-	public String getName(int key) {
+	public String getName(Integer key) {
 		return itemList.get(key);
+	}
+	
+	public int getSize() {
+		return itemList.size();
 	}
 	
 	public boolean checkExistence(String testee) {
@@ -45,7 +49,11 @@ public class ItemSet {
 		return itemMap.containsKey(testee.toUpperCase());
 	}
 	
+	public void printMap() {
+		System.out.println(itemMap);
+	}
+	
 	public static void main(String [] args) {
-		new ItemSet("./Items.txt");
+		(new ItemSet("./Items.txt")).printMap();
 	}
 }

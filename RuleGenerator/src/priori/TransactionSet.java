@@ -40,4 +40,8 @@ public class TransactionSet {
 	public ArrayList<String[]> getItemsArray() {
 		return itemsArray;
 	}
+	
+	public void remove(int index) {
+		itemsArray.remove(index);
+	}
 }
