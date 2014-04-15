@@ -1,7 +1,6 @@
 package apriori;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Generator {
@@ -11,22 +10,33 @@ public class Generator {
 	private ArrayList<ArrayList<Integer>> counts;
 	private ItemSet itemSet;
 	private int level;
-
+        private int transID = -1;
+        
 	public Generator(String transactionFile) {
-		this.initialize();
+		this.counts = new ArrayList<ArrayList<Integer>>();
+		this.combinations = new ArrayList<ArrayList<ArrayList<Integer>>>();
 		this.transactions = new TransactionSet(transactionFile);
+                this.transID = transactions.getTransactionID();
 		this.itemSet = new ItemSet(transactions.getItemsArray());
 //	 	this.transactionValidation(transactions.getItemsArray());
 		this.constructTransactionMap(transactions.getItemsArray());
 		
 	}
 	
+        // To initialize necessary variables to get ready for next generation
 	public void initialize() {
-		this.counts = new ArrayList<ArrayList<Integer>>();
-		this.combinations = new ArrayList<ArrayList<ArrayList<Integer>>>();
+                this.counts.clear();
+                this.combinations.clear();
 		this.level = 0;
 	}
-	
+        
+        // return the primary key of the transaction inserted into the database
+        public int getTransactionID() {
+            return transID;
+        }
+        
+        // To convert every item of type String in the transactionSet to a integer, 
+        // so it's faster in all operations.  (This is done by using the hashmap in ItemSet Class)
 	private void constructTransactionMap(ArrayList<String[]> transactionString) {
 		this.transactionData = new ArrayList<ArrayList<Integer>>();
 		for (String[] trans : transactionString) {
@@ -37,6 +47,8 @@ public class Generator {
 		}
 	}
 
+        // To check if every item in the transaction set exists in the item list,
+        // if not, drop the corresponding transaction
 	private void transactionValidation(ArrayList<String[]> transactionString) {
 		// Check for the existence of items in transactions
 		ArrayList<Integer> index = new ArrayList<Integer>();
@@ -53,6 +65,7 @@ public class Generator {
 		}
 	}
 
+        // Uses apriori algorithm to generate the rules and return as an ArrayList
 	public ArrayList<Rule> generate(double minSupportLev, double minConfidenceLev) {
 		int minSupportCount = (int) Math.round(transactionData.size() * minSupportLev);
 		ArrayList<Integer> toBeDel = new ArrayList<Integer>();
@@ -146,7 +159,6 @@ public class Generator {
 					boolean largeEnough = trans.size() >= combinations.get(level).get(i).size();
 					
 					for(int j=0;  largeEnough && j<combinations.get(level).get(i).size() && contain; j++) {
-//						System.out.println(trans + ": " + combinations.get(level).get(i).get(j));
 						if (!trans.contains(combinations.get(level).get(i).get(j))) {
 							contain = false;
 						}
@@ -183,6 +195,7 @@ public class Generator {
 		return ruleGeneration(minConfidenceLev);
 	}
 
+        // To actually use the combinations generated and construct rules
 	private ArrayList<Rule> ruleGeneration(double minConfidenceLev) {
 		ArrayList<Rule> result = new ArrayList<Rule>();
 		ArrayList<Integer> ant = new ArrayList<Integer>();
@@ -213,12 +226,12 @@ public class Generator {
 					// If the two rules generated meet the minimum confidence level,
 					// then add them to the result rule list.
 					double conf = calcConfidence(ant,con);
-					if(conf > minConfidenceLev) {
+					if(conf >= minConfidenceLev) {
 						result.add(new Rule(convert(ant),convert(con),conf));
 					}
 					
 					double confRev = calcConfidence(antRev,conRev);
-					if(confRev > minConfidenceLev) {
+					if(confRev >= minConfidenceLev) {
 						result.add(new Rule(convert(antRev),convert(conRev),confRev));
 					}
 				}
@@ -229,6 +242,8 @@ public class Generator {
 		return result;
 	}
 	
+        // Go through all transactions, and counts the times they appeared, and then 
+        // calculate the confidence level
 	private double calcConfidence(ArrayList<Integer> ant, ArrayList<Integer> con) {
 		int hitCount = 0;
 		int totalCount = 0;
@@ -262,6 +277,8 @@ public class Generator {
 		return hitCount*1.0/totalCount;
 	}
 	
+        // To conver the the items of type integers back to String form using the
+        // hashmap in ItemSet Class again
 	private ArrayList<String> convert(ArrayList<Integer> intList) {
 		ArrayList<String> result = new ArrayList<String>();
 		for(int i=0; i<intList.size(); i++) {

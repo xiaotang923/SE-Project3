@@ -14,6 +14,7 @@ public class Rule implements Comparable<Rule> {
 		this.confidencLev = confidencLev;
 	}
 	
+        @Override
 	public String toString() {
 		return antecedent + "  ==>  " + consequent + " | (Confidence: " + (double)Math.round(confidencLev*10000)/100 + "%)";
 	}
@@ -29,6 +30,28 @@ public class Rule implements Comparable<Rule> {
 		}
 		return result;
 	}
+        
+        @Override
+        public boolean equals(Object obj) {
+            boolean result = true;
+            Rule other = (Rule)obj;
+            
+            for(String item : other.getAntecedent()) {
+                if(!this.antecedent.contains(item)) {
+                    result = false;
+                }
+            }
+            
+            if(result) {
+                for(String item : other.getConsequent()) {
+                    if(!this.getConsequent().contains(item)) {
+                        result =false;
+                    }
+                }
+            }
+            
+            return result;
+        }
         
         public double getConfidencLev() {
             return this.confidencLev;

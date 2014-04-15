@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package apriori;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.JFileChooser;
@@ -17,24 +14,56 @@ public class GUI extends javax.swing.JFrame {
     private String transactionPath = null;
     private double minConLev = 0.00;
     private double minSupLev = 0.00;
-
+    private int transID = -1;
+    
     public GUI() {
         initComponents();
     }
-
-    public void generate() {
+    
+    // Generate the rules and record the time elapsed
+    public void generate(){
         Timer timer = new Timer();
         timer.start();
 
         Generator generator = new Generator(transactionPath);
+        transID = generator.getTransactionID();
         rules = generator.generate(minSupLev, minConLev);
         Collections.sort(rules);
-
-        displayArea.setText(constructRuleString());
+        
+        // Combine all rules into one single string
+        String ruleString = constructRuleString() + "\n\n\nTime elapsed is: " + timer.stop();
+        
+        // Display the result of the generation
+        displayArea.setText(ruleString);
+        
+        // Ask the user to confirm whether he wants to output the rules to a file
+        // and then if yes, show a SaveDialog;
+        if(JOptionPane.showConfirmDialog(this, "Do you want to output all the rules to a text file?") == JOptionPane.YES_OPTION) {
+            JFileChooser chooser = new JFileChooser();
+            chooser.setCurrentDirectory(new File("."));
+            chooser.showSaveDialog(this);
+            File f = chooser.getSelectedFile();
+            try {
+                PrintWriter out = new PrintWriter(f);
+                out.write(ruleString);
+                out.close();
+                
+                DatabaseControl dbc = new DatabaseControl();
+                if(dbc.open()) {
+                    dbc.ruleSetInsert(rules, transID);
+                    dbc.close();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Database connection has failed, get your shit together!!!");
+                }
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(this, "File not found!");
+            }
+        }
     }
 
+    // To combine all rules (in string form) into one string object
     public String constructRuleString() {
-        String result = null;
+        String result = "No rules generated!";
         
         if (!rules.isEmpty()) {
             result = "Rule 1:  " + rules.get(0).toString();
@@ -208,6 +237,8 @@ public class GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    // When "Generate" button is clicked, check if every required information is valid,
+    // and then proceed to generation
     private void generateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateActionPerformed
         if (this.transactionPath == null) {
             JOptionPane.showMessageDialog(this, "Please select your transaction file before generating rules!");
@@ -216,14 +247,14 @@ public class GUI extends javax.swing.JFrame {
         } else {
             // Parse minimum support level
             this.minSupLev = Double.parseDouble(this.MSLtxt.getText());
-            if (minSupLev > 1.0 && minSupLev < 0.0) {
+            if (minSupLev > 1.0 || minSupLev < 0.0) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid 'Minimum Support Level' (0.00~1.00)!");
                 return;
             }
         
             // Parse minimum confidence level
             this.minConLev = Double.parseDouble(this.MCLtxt.getText());
-            if (minConLev > 1.0 && minConLev < 0.0) {
+            if (minConLev > 1.0 || minConLev < 0.0) {
                 JOptionPane.showMessageDialog(this, "Please enter a valid 'Minimum Confidence Level' (0.00~1.00)!");
                 return;
             }
@@ -231,6 +262,8 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_generateActionPerformed
 
+    // If the users click "Browse" button, the GUI pops up a file choosing window for 
+    // users to specify which transaction file they want to open
     private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new File("."));
